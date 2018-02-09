@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
@@ -19,7 +18,10 @@ class Article extends Resource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'body' => $this->body
+            'body' => $this->body,
+            'links'=> [
+                'comments' => route('comments.index',$this->id)
+            ]
         ];
     }
 
@@ -31,4 +33,6 @@ class Article extends Resource
 
         ];
     }
+
+    
 }

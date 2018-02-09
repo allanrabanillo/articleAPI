@@ -74,4 +74,6 @@ class ArticleController extends Controller
         }
         
     }
+
+    
 }

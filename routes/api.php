@@ -33,4 +33,10 @@ Route::put('article','ArticleController@store');
 //Delete article
 Route::delete('article/{id}','ArticleController@destroy');
 
+//List of articles
+Route::get('article/{article_id}/comment/{review_id}','CommentsController@show');
+
+
+//List of articles
+Route::get('article/{id}/comments','CommentsController@index')->name('comments.index');
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CommentsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(ArticlesTableSeeder::class);
-         $this->call(CommentsTableSeeder::class);
-         
+        factory(App\Comments::class, 50)->create();
     }
 }
