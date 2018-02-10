@@ -19,7 +19,7 @@ class CommentsController extends Controller
     public function index($article_id)
     {
          //Get comments
-        $commets = Article::findOrFail($article_id)->comments;  
+        $comments = Article::findOrFail($article_id)->comments;  
 
         //Return collection of articles as resource
         return CommentResource::collection($comments);
