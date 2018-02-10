@@ -37,6 +37,6 @@ Route::delete('article/{id}','ArticleController@destroy');
 Route::get('article/{article_id}/comment/{review_id}','CommentsController@show');
 
 
-//List of articles
+//List the comments of article
 Route::get('article/{id}/comments','CommentsController@index')->name('comments.index');
 

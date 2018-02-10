@@ -14,6 +14,17 @@ class Comment extends Resource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+        return [
+            'comment' => $this->comment
+        ];
+    }
+    public function with($request)
+    {
+        return [
+            'version' => '1.0.0',
+            'author' => 'Allan Rabanillo'
+
+        ];
     }
 }

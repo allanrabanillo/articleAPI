@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Comments;
+use App\Comment;
+use App\Article;
 use App\Http\Resources\Comment as CommentResource;
 
 
@@ -15,13 +16,13 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index($article_id)
     {
          //Get comments
-        $comments = Comments::findOrFail($id);
+        $commets = Article::findOrFail($article_id)->comments;  
 
         //Return collection of articles as resource
-        return new CommentResource($comments);
+        return CommentResource::collection($comments);
     }
 
     /**

@@ -4,7 +4,7 @@ namespace App;
 use App\Article;
 use Illuminate\Database\Eloquent\Model;
 
-class Comments extends Model
+class Comment extends Model
 {
     public function article()
     {
