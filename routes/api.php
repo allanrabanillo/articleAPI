@@ -25,17 +25,13 @@ Route::get('articles','ArticleController@index');
 Route::get('article/{id}','ArticleController@show');
 
 //Create new article
-Route::post('article','ArticleController@store');
+Route::middleware('auth:api')->post('article','ArticleController@store');
 
 //Update article
-Route::put('article','ArticleController@store');
+Route::middleware('auth:api')->put('article','ArticleController@store');
 
 //Delete article
-Route::delete('article/{id}','ArticleController@destroy');
-
-//List of articles
-Route::get('article/{article_id}/comment/{review_id}','CommentsController@show');
-
+Route::middleware('auth:api')->delete('article/{id}','ArticleController@destroy');
 
 //List the comments of article
 Route::get('article/{id}/comments','CommentsController@index')->name('comments.index');

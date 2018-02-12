@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use App\Http\Requests\ArticleRequest;
 use App\Article;
 use App\Http\Resources\Article as ArticleResource;
 
@@ -30,7 +30,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
         $article = $request->isMethod('put') ? Article::findOrFail($request->article_id) : new Article;
 
